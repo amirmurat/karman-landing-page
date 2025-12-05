@@ -17,7 +17,7 @@
       }
       gtag("js", new Date());
       gtag("config", "G-ZPTNBT14TT");
-//При
+      //При
       // Отслеживание кликов
       function trackClick(buttonName) {
         gtag("event", "click", {
@@ -310,17 +310,15 @@
       <div class="waitlist" id="waitlist">
         <h3>🚀 Премиум скоро!</h3>
         <p>Оставь email — получи бесплатный месяц при запуске</p>
-
-        <!-- Tally.so форма -->
-        <iframe
-          data-tally-src="https://tally.so/embed/5BbBJQ?alignLeft=1&hideTitle=1&transparentBackground=1"
-          loading="lazy"
-          width="100%"
-          height="250"
-          frameborder="0"
-          style="border: none"
+        <a
+          href="https://tally.so/r/5BbBJQ"
+          target="_blank"
+          class="btn btn-primary"
+          onclick="trackClick('email_submit')"
+          style="margin-top: 20px"
         >
-        </iframe>
+          Оставить email →
+        </a>
       </div>
 
       <div class="stats">
@@ -354,24 +352,6 @@
         document
           .getElementById("waitlist")
           .scrollIntoView({ behavior: "smooth" });
-      }
-
-      // Tally.so embed script
-      var d = document,
-        w = "https://tally.so/widgets/embed.js",
-        v = function () {
-          "undefined" != typeof Tally
-            ? Tally.loadEmbeds()
-            : d
-                .querySelectorAll("iframe[data-tally-src]:not([src])")
-                .forEach(function (e) {
-                  e.src = e.dataset.tallySrc;
-                });
-        };
-      if ("undefined" != typeof Tally) v();
-      else if (d.querySelector('script[src="' + w + '"]') == null) {
-        var s = d.createElement("script");
-        (s.src = w), (s.onload = v), (s.onerror = v), d.body.appendChild(s);
       }
     </script>
   </body>
